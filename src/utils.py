@@ -221,4 +221,31 @@ def format_params(num_params: int) -> str:
     """Format parameter count in a human-readable way."""
     if num_params >= 1e9:
         return f"{num_params/1e9:.2f}B"
-    elif num_params
+    elif num_params >= 1e6:
+        return f"{num_params/1e6:.2f}M"
+    elif num_params >= 1e3:
+        return f"{num_params/1e3:.2f}K"
+    else:
+        return str(num_params)
+
+
+class AverageMeter:
+    """Computes and stores the average and current value."""
+    
+    def __init__(self):
+        self.reset()
+    
+    def reset(self):
+        self.val = 0
+        self.avg = 0
+        self.sum = 0
+        self.count = 0
+    
+    def update(self, val: float, n: int = 1):
+        self.val = val
+        self.sum += val * n
+        self.count += n
+        self.avg = self.sum / self.count
+    
+    def __repr__(self):
+        return f"{self.avg:.4f}"
