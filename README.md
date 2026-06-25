@@ -1,5 +1,3 @@
-# 📖 Complete README.md for TOPO-Transformer
-
 # 🚀 TOPO-Transformer: The First Production-Ready Solution to Catastrophic Forgetting
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
